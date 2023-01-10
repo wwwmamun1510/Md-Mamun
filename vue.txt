@@ -1,0 +1,10 @@
+const handleedit=async(id)=>{
+  await fetch('http://127.0.0.1:8000/api/students/'+id,{
+    method:'edit'
+
+  })
+  fetch('http://127.0.0.1:8000/api/students')
+  .then(response => response.json())
+  .then(payload => {
+    studentsData.value = payload.students_information
+  })

@@ -1,0 +1,35 @@
+ if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('public/uploads/images/', $filename);
+            $student->image = $filename;
+        }
+
+ if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('public/uploads/images/', $filename);
+            $student->image = $filename;
+        }
+
+$table->string('image');
+
+
+ <div class="form-group mb-3">
+                            <label for="">Image</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+
+      <td>
+          <img src="{{ asset('public/uploads/images/'.$item->image)}}" width="70px" height="70px" alt="Image">
+      </td>
+
+    <div class="form-group mb-3">
+                            <label for="">Image</label>
+                            <input type="file" name="image" class="form-control">
+                            <img src="{{ asset('public/uploads/images/'.$student->image) }}" width="70px" height="70px" alt="Image">
+                        </div>
